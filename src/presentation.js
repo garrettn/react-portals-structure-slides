@@ -1,5 +1,5 @@
 // Import React
-import React from 'react';
+import React from 'react'
 
 // Import Spectacle Core tags
 import {
@@ -11,27 +11,27 @@ import {
   List,
   Quote,
   Slide,
-  Text,
-} from 'spectacle';
+  Text
+} from 'spectacle'
 
 // Import theme
-import createTheme from 'spectacle/lib/themes/default';
+import createTheme from 'spectacle/lib/themes/default'
 
 // Require CSS
-require('normalize.css');
+require('normalize.css')
 
 const theme = createTheme(
   {
     primary: 'white',
     secondary: '#1F2022',
     tertiary: '#03A9FC',
-    quartenary: '#CECECE',
+    quartenary: '#CECECE'
   },
   {
     primary: 'Montserrat',
-    secondary: 'Helvetica',
+    secondary: 'Helvetica'
   }
-);
+)
 
 export default class Presentation extends React.Component {
   render() {
@@ -43,10 +43,10 @@ export default class Presentation extends React.Component {
       >
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit lineHeight={1} textColor="secondary">
-						Semantic Document Structure
+            Semantic Document Structure
           </Heading>
-					<Text margin="10px 0 0" textColor="tertiary" size={1} bold>
-						with React portals
+          <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
+            with React portals
           </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
@@ -90,6 +90,6 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
       </Deck>
-    );
+    )
   }
 }

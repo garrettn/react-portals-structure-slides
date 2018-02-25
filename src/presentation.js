@@ -3,13 +3,14 @@ import React from 'react'
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   Cite,
+  CodePane,
   Deck,
+  Fill,
   Heading,
-  ListItem,
-  List,
-  Quote,
+  Layout,
   Slide,
   Text
 } from 'spectacle'
@@ -49,45 +50,94 @@ export default class Presentation extends React.Component {
             with React portals
           </Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
-          </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
+        <Slide>
+          <Text>Back in the day . . .</Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
-          </Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+        <Slide>
+          <Text>The Backbone way:</Text>
+          <CodePane
+            lang="js"
+            theme="light"
+            source={`
+var App = require('./views/App')
+
+var app = new App()
+
+document.body.appendChild(app.render().el)
+							`}
+          />
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+        <Slide>
+          <Text>So I tried this:</Text>
+          <CodePane
+            lang="jsx"
+            theme="light"
+            source={`
+import React from 'react'
+import { render } from 'react-dom'
+import { App } from './App'
+
+render(<App />, document.body)
+							`}
+          />
+          <Appear>
+            <Text textColor="red">This is bad!</Text>
+          </Appear>
+        </Slide>
+        <Slide>
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            Rendering components directly into document.body is discouraged,
+            since its children are often manipulated by third-party scripts and
+            browser extensions. This may lead to subtle reconciliation issues.
+            Try rendering into a container element created for your app.
           </BlockQuote>
+          <Cite>Friendly React warning</Cite>
+        </Slide>
+        <Slide>
+          <Layout>
+            <Fill>
+              <Text>How I write HTML</Text>
+              <CodePane
+                lang="html"
+                theme="light"
+                source={`
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Your basic website</title>
+</head>
+<body>
+	<header></header>
+	<main role="main"></main>
+	<footer></footer>
+</body>
+</html>
+								`}
+              />
+            </Fill>
+            <Appear>
+              <Fill>
+                <Text>What React wants</Text>
+                <CodePane
+                  lang="html"
+                  theme="light"
+                  source={`
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React all the things!</title>
+</head>
+<body>
+	<div id="root"></div>
+</body>
+</html>
+								`}
+                />
+              </Fill>
+            </Appear>
+          </Layout>
         </Slide>
       </Deck>
     )

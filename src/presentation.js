@@ -11,7 +11,10 @@ import {
   Deck,
   Fill,
   Heading,
+  Image,
   Layout,
+  List,
+  ListItem,
   Slide,
   Text
 } from 'spectacle'
@@ -50,6 +53,8 @@ export default class Presentation extends React.Component {
           <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
             with React portals
           </Text>
+          <Text>Utah React Meetup, 28 Feb 2018</Text>
+          <Text>[link to slides]</Text>
         </Slide>
         <Slide>
           <Text>Back in the day . . .</Text>
@@ -231,6 +236,41 @@ render(<App />, document.body)
               </div>
             </Fill>
           </Layout>
+        </Slide>
+        <Slide>
+          <Text>[disappointed face]</Text>
+        </Slide>
+        <Slide>
+          <Heading size={3}>React portals can help!</Heading>
+          <Text>[portal cake]</Text>
+        </Slide>
+        <Slide>
+          <Heading size={3}>An example</Heading>
+          <Text fit>
+            <a href="https://stackblitz.com/edit/react-portals-structure">
+              https://stackblitz.com/edit/react-portals-structure
+            </a>
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading size={3}>Caveats</Heading>
+          <List>
+            <ListItem>Just an idea (for now)</ListItem>
+            <ListItem>Added complexity</ListItem>
+            <ListItem>No React control over container elements</ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Image
+            src={require('./thinking-with-portals.jpg')}
+            alt="Now you're thinking with portals"
+          />
+        </Slide>
+        <Slide>
+          <Heading>Thank you!</Heading>
+          <Text>
+            <a href="https://twitter.com/grrttn">@grrttn</a>
+          </Text>
         </Slide>
       </Deck>
     )

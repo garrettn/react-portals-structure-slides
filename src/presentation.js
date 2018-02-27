@@ -6,6 +6,7 @@ import {
   Appear,
   BlockQuote,
   Cite,
+  Code,
   CodePane,
   Deck,
   Fill,
@@ -94,9 +95,9 @@ render(<App />, document.body)
           <Cite>Friendly React warning</Cite>
         </Slide>
         <Slide>
+          <Text>How I like to write HTML</Text>
           <Layout>
             <Fill>
-              <Text>How I write HTML</Text>
               <CodePane
                 lang="html"
                 theme="light"
@@ -116,13 +117,56 @@ render(<App />, document.body)
 								`}
               />
             </Fill>
-            <Appear>
-              <Fill>
-                <Text>What React wants</Text>
-                <CodePane
-                  lang="html"
-                  theme="light"
-                  source={`
+            <Fill>
+              <div
+                style={{
+                  height: '100%',
+                  display: 'grid',
+                  gridTemplateRows: '1fr 2fr 1fr'
+                }}
+              >
+                <header
+                  style={{
+                    padding: '0.5em',
+                    border: '5px solid black',
+                    borderRadius: '5px'
+                  }}
+                >
+                  <Code>header</Code>
+                </header>
+                <div
+                  style={{
+                    margin: '0.1em 0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: '5px solid black',
+                    borderRadius: '5px'
+                  }}
+                >
+                  <Code>main</Code>
+                </div>
+                <footer
+                  style={{
+                    padding: '0.5em',
+                    border: '5px solid black',
+                    borderRadius: '5px'
+                  }}
+                >
+                  <Code>footer</Code>
+                </footer>
+              </div>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide>
+          <Text>What React wants</Text>
+          <Layout>
+            <Fill>
+              <CodePane
+                lang="html"
+                theme="light"
+                source={`
 <!doctype html>
 <html lang="en">
 <head>
@@ -134,9 +178,58 @@ render(<App />, document.body)
 </body>
 </html>
 								`}
-                />
-              </Fill>
-            </Appear>
+              />
+            </Fill>
+            <Fill>
+              <div
+                style={{
+                  padding: '0.1em',
+                  border: '5px solid red',
+                  borderRadius: '5px'
+                }}
+              >
+                <Code>div#root</Code>
+                <div
+                  style={{
+                    marginTop: '0.1em',
+                    height: '100%',
+                    display: 'grid',
+                    gridTemplateRows: '1fr 2fr 1fr'
+                  }}
+                >
+                  <header
+                    style={{
+                      padding: '0.5em',
+                      border: '5px solid black',
+                      borderRadius: '5px'
+                    }}
+                  >
+                    <Code>header</Code>
+                  </header>
+                  <div
+                    style={{
+                      margin: '0.1em 0',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      border: '5px solid black',
+                      borderRadius: '5px'
+                    }}
+                  >
+                    <Code>main</Code>
+                  </div>
+                  <footer
+                    style={{
+                      padding: '0.5em',
+                      border: '5px solid black',
+                      borderRadius: '5px'
+                    }}
+                  >
+                    <Code>footer</Code>
+                  </footer>
+                </div>
+              </div>
+            </Fill>
           </Layout>
         </Slide>
       </Deck>

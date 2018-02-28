@@ -57,69 +57,6 @@ export default class Presentation extends React.Component {
           <Text>[link to slides]</Text>
         </Slide>
         <Slide>
-          <Text>Back in the day . . .</Text>
-        </Slide>
-        <Slide>
-          <Text>The Backbone way:</Text>
-          <CodePane
-            lang="js"
-            theme="light"
-            source={`
-var App = require('./views/App')
-
-var app = new App()
-
-document.body.appendChild(app.render().el)`}
-          />
-        </Slide>
-        <Slide>
-          <Text>So I tried this:</Text>
-          <CodePane
-            lang="jsx"
-            theme="light"
-            source={`
-import React from 'react'
-import { render } from 'react-dom'
-import { App } from './App'
-
-render(<App />, document.body)`}
-          />
-          <Appear>
-            <Text textColor="red" bold>
-              This is bad!
-            </Text>
-          </Appear>
-        </Slide>
-        <Slide>
-          <BlockQuote textSize="1.5em">
-            Rendering components directly into document.body is discouraged,
-            since its children are often manipulated by third-party scripts and
-            browser extensions. This may lead to subtle reconciliation issues.
-            Try rendering into a container element created for your app.
-          </BlockQuote>
-          <Cite>Friendly React warning</Cite>
-        </Slide>
-        <Slide>
-          <Text>How I like to write HTML</Text>
-          <CodePane
-            lang="html"
-            theme="light"
-            source={`
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Your basic website</title>
-</head>
-<body>
-  <header></header>
-  <main role="main"></main>
-  <footer></footer>
-</body>
-</html>`}
-          />
-        </Slide>
-        <Slide>
           <div
             style={{
               height: '100%',
@@ -159,6 +96,44 @@ render(<App />, document.body)`}
               <Code>footer</Code>
             </footer>
           </div>
+        </Slide>
+        <Slide>
+          <Text>How I like to write HTML</Text>
+          <CodePane
+            lang="html"
+            theme="light"
+            source={`
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your basic website</title>
+</head>
+<body>
+  <header></header>
+  <main role="main"></main>
+  <footer></footer>
+</body>
+</html>`}
+          />
+        </Slide>
+        <Slide>
+          <Text>So I tried this:</Text>
+          <CodePane
+            lang="jsx"
+            theme="light"
+            source={`
+import React from 'react'
+import { render } from 'react-dom'
+import { App } from './App'
+
+render(<App />, document.body)`}
+          />
+          <Appear>
+            <Text textColor="red" bold>
+              This is bad!
+            </Text>
+          </Appear>
         </Slide>
         <Slide>
           <Text>What React wants</Text>

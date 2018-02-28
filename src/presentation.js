@@ -38,6 +38,8 @@ const theme = createTheme(
   }
 )
 
+theme.screen.components.codePane.fontSize = '2rem'
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -87,11 +89,13 @@ render(<App />, document.body)
 							`}
           />
           <Appear>
-            <Text textColor="red">This is bad!</Text>
+            <Text textColor="red" bold>
+              This is bad!
+            </Text>
           </Appear>
         </Slide>
         <Slide>
-          <BlockQuote>
+          <BlockQuote textSize="1.5em">
             Rendering components directly into document.body is discouraged,
             since its children are often manipulated by third-party scripts and
             browser extensions. This may lead to subtle reconciliation issues.
@@ -101,12 +105,10 @@ render(<App />, document.body)
         </Slide>
         <Slide>
           <Text>How I like to write HTML</Text>
-          <Layout>
-            <Fill>
-              <CodePane
-                lang="html"
-                theme="light"
-                source={`
+          <CodePane
+            lang="html"
+            theme="light"
+            source={`
 <!doctype html>
 <html lang="en">
 <head>
@@ -120,58 +122,55 @@ render(<App />, document.body)
 </body>
 </html>
 								`}
-              />
-            </Fill>
-            <Fill>
-              <div
-                style={{
-                  height: '100%',
-                  display: 'grid',
-                  gridTemplateRows: '1fr 2fr 1fr'
-                }}
-              >
-                <header
-                  style={{
-                    padding: '0.5em',
-                    border: '5px solid black',
-                    borderRadius: '5px'
-                  }}
-                >
-                  <Code>header</Code>
-                </header>
-                <div
-                  style={{
-                    margin: '0.1em 0',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '5px solid black',
-                    borderRadius: '5px'
-                  }}
-                >
-                  <Code>main</Code>
-                </div>
-                <footer
-                  style={{
-                    padding: '0.5em',
-                    border: '5px solid black',
-                    borderRadius: '5px'
-                  }}
-                >
-                  <Code>footer</Code>
-                </footer>
-              </div>
-            </Fill>
-          </Layout>
+          />
+        </Slide>
+        <Slide>
+          <div
+            style={{
+              height: '100%',
+              display: 'grid',
+              gridTemplateRows: '1fr 5fr 1fr'
+            }}
+          >
+            <header
+              style={{
+                padding: '0.5em',
+                border: '5px solid black',
+                borderRadius: '5px'
+              }}
+            >
+              <Code>header</Code>
+            </header>
+            <div
+              style={{
+                margin: '0.1em 0',
+                padding: '4em 0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '5px solid black',
+                borderRadius: '5px'
+              }}
+            >
+              <Code>main</Code>
+            </div>
+            <footer
+              style={{
+                padding: '0.5em',
+                border: '5px solid black',
+                borderRadius: '5px'
+              }}
+            >
+              <Code>footer</Code>
+            </footer>
+          </div>
         </Slide>
         <Slide>
           <Text>What React wants</Text>
-          <Layout>
-            <Fill>
-              <CodePane
-                lang="html"
-                theme="light"
-                source={`
+          <CodePane
+            lang="html"
+            theme="light"
+            source={`
 <!doctype html>
 <html lang="en">
 <head>
@@ -183,59 +182,58 @@ render(<App />, document.body)
 </body>
 </html>
 								`}
-              />
-            </Fill>
-            <Fill>
-              <div
+          />
+        </Slide>
+        <Slide>
+          <div
+            style={{
+              padding: '0.1em',
+              border: '5px solid red',
+              borderRadius: '5px'
+            }}
+          >
+            <Code>div#root</Code>
+            <div
+              style={{
+                marginTop: '0.1em',
+                height: '100%',
+                display: 'grid',
+                gridTemplateRows: '1fr 5fr 1fr'
+              }}
+            >
+              <header
                 style={{
-                  padding: '0.1em',
-                  border: '5px solid red',
+                  padding: '0.5em',
+                  border: '5px solid black',
                   borderRadius: '5px'
                 }}
               >
-                <Code>div#root</Code>
-                <div
-                  style={{
-                    marginTop: '0.1em',
-                    height: '100%',
-                    display: 'grid',
-                    gridTemplateRows: '1fr 2fr 1fr'
-                  }}
-                >
-                  <header
-                    style={{
-                      padding: '0.5em',
-                      border: '5px solid black',
-                      borderRadius: '5px'
-                    }}
-                  >
-                    <Code>header</Code>
-                  </header>
-                  <div
-                    style={{
-                      margin: '0.1em 0',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      border: '5px solid black',
-                      borderRadius: '5px'
-                    }}
-                  >
-                    <Code>main</Code>
-                  </div>
-                  <footer
-                    style={{
-                      padding: '0.5em',
-                      border: '5px solid black',
-                      borderRadius: '5px'
-                    }}
-                  >
-                    <Code>footer</Code>
-                  </footer>
-                </div>
+                <Code>header</Code>
+              </header>
+              <div
+                style={{
+                  margin: '0.1em 0',
+                  padding: '4em 0',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '5px solid black',
+                  borderRadius: '5px'
+                }}
+              >
+                <Code>main</Code>
               </div>
-            </Fill>
-          </Layout>
+              <footer
+                style={{
+                  padding: '0.5em',
+                  border: '5px solid black',
+                  borderRadius: '5px'
+                }}
+              >
+                <Code>footer</Code>
+              </footer>
+            </div>
+          </div>
         </Slide>
         <Slide>
           <Text>[disappointed face]</Text>

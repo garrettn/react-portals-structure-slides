@@ -53,8 +53,14 @@ export default class Presentation extends React.Component {
           <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
             with React portals
           </Text>
-          <Text>Utah React Meetup, 28 Feb 2018</Text>
-          <Text>[link to slides]</Text>
+          <Text margin="1em 0 0" textSize="1em">
+            Utah React Meetup, 28 Feb 2018
+          </Text>
+          <Text textSize="1em">
+            <a href="https://garrettn.github.io/react-portals-structure-slides/">
+              https://garrettn.github.io/react-portals-structure-slides
+            </a>
+          </Text>
         </Slide>
         <Slide>
           <div
@@ -205,11 +211,15 @@ render(<App />, document.body)`}
           </div>
         </Slide>
         <Slide>
-          <Text>[disappointed face]</Text>
+          <Image
+            src={require('./pensive-face.svg')}
+            alt="pensive face"
+            width="75%"
+          />
         </Slide>
         <Slide>
           <Heading size={3}>React portals can help!</Heading>
-          <Text>[portal cake]</Text>
+          <Image src={require('./portal-cake.jpg')} alt="cake" />
         </Slide>
         <Slide>
           <Heading size={3}>An example</Heading>

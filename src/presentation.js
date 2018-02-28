@@ -9,10 +9,8 @@ import {
   Code,
   CodePane,
   Deck,
-  Fill,
   Heading,
   Image,
-  Layout,
   List,
   ListItem,
   Slide,
@@ -71,8 +69,7 @@ var App = require('./views/App')
 
 var app = new App()
 
-document.body.appendChild(app.render().el)
-							`}
+document.body.appendChild(app.render().el)`}
           />
         </Slide>
         <Slide>
@@ -85,8 +82,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { App } from './App'
 
-render(<App />, document.body)
-							`}
+render(<App />, document.body)`}
           />
           <Appear>
             <Text textColor="red" bold>
@@ -112,16 +108,15 @@ render(<App />, document.body)
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Your basic website</title>
+  <meta charset="UTF-8">
+  <title>Your basic website</title>
 </head>
 <body>
-	<header></header>
-	<main role="main"></main>
-	<footer></footer>
+  <header></header>
+  <main role="main"></main>
+  <footer></footer>
 </body>
-</html>
-								`}
+</html>`}
           />
         </Slide>
         <Slide>
@@ -174,14 +169,13 @@ render(<App />, document.body)
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>React all the things!</title>
+  <meta charset="UTF-8">
+  <title>React all the things!</title>
 </head>
 <body>
-	<div id="root"></div>
+  <div id="root"></div>
 </body>
-</html>
-								`}
+</html>`}
           />
         </Slide>
         <Slide>
